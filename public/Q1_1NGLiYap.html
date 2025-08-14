@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head></head>
-<body>
-    <!-- comment line -->
+<body bgcolor="MistyRose">
+
     <h1>Snack Stock Checker</h1>
     <label> Enter your age <input id ="age" /> 
     </label></br/>
+
     <label> Enter your max age <input id ="maxAge" /> 
     </label></br/>
+
     <label> Enter your favorite snack <input id ="snackName" /> 
     </label></br/>
+
     <label> Enter number of snacks <input id ="numPerDay" /> 
     </label></br/>
-    <p>Result:
+
+    <p style ="color: rgb(121, 13, 13);"> <b>Result:
         <span id = "resultHere"></span>
+    </b>
     </p>
-    <button>Accept Input</button>
-    <!-- -->
+    <button onclick = "checkSnack()" style = "background-color:rgb(121, 13, 13); color:antiquewhite;">Accept Input</button>
 
-<!-- <script>
-    let age = window.prompt("Enter your age: ", 14);
-    let maxAge = window.prompt("You will live until the ripe old age of: ", 99);
-    let snackName = window.prompt("Your favorite snack is: ", "apple")
-    let numPerDay = window.prompt("Number of snacks eaten daily: ", 2);
 
-    let sure = window.confirm("Are you sure of your inputs?");
-    if(sure){
-        let totalRequired = (numPerDay * 365) * (maxAge - age);
-        document.write(`You will need ${totalRequired} ${snackName} to last you until the ripe old age of ${maxAge}`);
-    }
-    else{
-        window.alert("Please refresh your browser <3");
+<script>
+    function checkSnack() {
+        let AGE = Number(document.getElementById("age").value);
+        let MAXAGE = Number(document.getElementById("maxAge").value);
+        let SNACKPERDAY = Number(document.getElementById("numPerDay").value);
+        let THESNACK = document.getElementById("snackName").value
+
+        let ripeOldAge = (SNACKPERDAY * 365)*(MAXAGE - AGE);
+        document.getElementById("resultHere").innerHTML = `You will need ${ripeOldAge} ${THESNACK} to last you until the ripe old age of ${MAXAGE}`;
     }
 
-</script> -->
+</script>
 </body>
 </html>
