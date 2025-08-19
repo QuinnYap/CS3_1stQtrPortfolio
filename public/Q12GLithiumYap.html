@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html>
+<head></head>
 <body>
 
     <h2> Q1 2nd Graded Exercise submitted by Quinn Mikayela C. Yap of Lithium</h2>
 
-    <label>Enter the price of the meal: <input id = "Meal Price" />
+    <label>Meal Price: <input id = "mealPrice" />
     </label></br/>
 
-    <label>Enter the price of the meal: <input id = "Tip" />
+    <label>Tip: <input id = "tippity" />
     </label></br/>
     
-    <label>Enter the price of the meal: <input id = "Service Charge" />
+    <label>Service Charge: <input id = "servCharge" />
     </label></br/>
+
+        <p><b>Total Meal:
+        <span id = "mealtotal"></span>
+    </b></p>
+
+    <button onclick = "totalMeal()">Accept Input</button>
+
 
     <script>
         function totalMeal() {
-              // place your JS code here
-            
-         
+            let mp = parseFloat(document.getElementById("mealPrice").value);
+            let tip = parseFloat(document.getElementById("tippity").value);
+            let sc = parseFloat(document.getElementById("servCharge").value);
+
+            let totalCost = mp + tip + (sc / 100 * mp);
+            let tC = totalCost.toFixed(2);
+            mealtotal.innerHTML = `${tC}`
         }
     </script>
+
+<footer>
+    <p></p>
+    <b>References: </b>
+    <p>Yap, Q.M. (2025). <i>Q1 1st Non-Graded Exercise: Variable Declaration v3.</i> Philippine Science High School.</p>
+    <p><i>W3Schools.com. </i> (n.d.). <a href = https://www.w3schools.com/jsref/jsref_tofixed.asp >https://www.w3schools.com/jsref/jsref_tofixed.asp </a></p>
+</footer>
 
 </body>
 </html>
